@@ -106,7 +106,11 @@ if (window.mp) {
 
 - 公用依赖提取 可以在 webpack 的 external 配置忽略一些公用的依赖；
 
-![external](https://mmbiz.qpic.cn/mmbiz_png/XIibZ0YbvibkVgF4mgZ9ica9NIuNKXjx7hszMCNuXAewqpFAvGicXNyYMZEn5ic7KsjsWH83NbayYLFHfwwb2JOrUSA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+```javascript
+externals: {
+  Vue: "window.mp.Vue";
+}
+```
 
 - manifest 子模块提供给容器查找对应的资源列表文件，这里使用`webpack-manifest-plugin`生成；
 
